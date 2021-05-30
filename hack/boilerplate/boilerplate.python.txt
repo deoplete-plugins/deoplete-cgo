@@ -1,0 +1,2 @@
+# SPDX-FileCopyrightText: Copyright 2021 The deoplete-plugins Authors
+# SPDX-License-Identifier: MIT

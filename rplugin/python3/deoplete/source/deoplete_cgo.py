@@ -189,15 +189,16 @@ struct
             include_brief_comments=True,
         )
 
+        if cr is None or cr_struct is None:
+            return []
+        results = cr.results
+        struct_results = cr_struct.results
         if cgo_options["sort_algo"] == "priority":
             results = sorted(cr.results, key=self.get_priority)
             struct_results = sorted(cr_struct.results, key=self.get_priority)
         elif cgo_options["sort_algo"] == "alphabetical":
             results = sorted(cr.results, key=self.get_abbrevation)
             struct_results = sorted(cr_struct.results, key=self.get_abbrevation)
-        else:
-            results = cr.results
-            struct_results = cr_struct.results
 
         cache[source] = [
             {
